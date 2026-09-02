@@ -28,6 +28,16 @@ pipeline{
                 sh 'mvn package -DskipTests'
             }
         }
+        stage('Build y push Docker image'){
+            steps{
+                script{
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials'){
+                        def image=docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                        image.push()
+                    }
+                }
+            }
+        }
     }
     post{
         success{
