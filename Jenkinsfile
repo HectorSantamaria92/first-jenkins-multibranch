@@ -44,7 +44,7 @@ pipeline{
             echo "Pipeline exitoso en rama ${env.BRANCH_NAME}"
         }
         failure{
-            echo "Pipeline  fallo en rama ${evn.BRANCH_NAME}"
+            echo "Pipeline  fallo en rama ${env.BRANCH_NAME}"
         }
     }
 }
