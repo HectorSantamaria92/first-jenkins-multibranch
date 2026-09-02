@@ -1,0 +1,27 @@
+# Todo lo que NO debe viajar al daemon de Docker al hacer "docker build".
+# Cuanto menos contexto se envie, mas rapido va el build.
+
+target/
+!target/*.jar
+
+.git/
+.gitignore
+.gitattributes
+.github/
+.vscode/
+.idea/
+*.iml
+
+docs/
+scripts/
+HELP.md
+README.md
+Jenkinsfile
+
+# El wrapper no hace falta: la imagen de build ya trae Maven
+mvnw
+mvnw.cmd
+.mvn/
+
+**/*.log
+**/.DS_Store
